@@ -6,7 +6,7 @@ import javax.annotation.PostConstruct;
 
 @Component
 public class Parrot {
-    private String name;
+    private String name = "Parry";
 
     public String getName() {
         return name;

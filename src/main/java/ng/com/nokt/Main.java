@@ -20,6 +20,6 @@ public class Main {
         Person p = context.getBean(Person.class);
 
         System.out.println(p.getName());
-        System.out.println(p.getParrot());
+        System.out.println(p.getParrot().getName());
     }
 }
