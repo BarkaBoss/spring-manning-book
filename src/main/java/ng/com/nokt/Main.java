@@ -9,13 +9,17 @@ public class Main {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-        Parrot p = context.getBean(Parrot.class);
-        //System.out.println(p);
-        p.setName("Parry");
-        Supplier<Parrot> parrotSupplier = ()-> p;
+//        Parrot p = context.getBean(Parrot.class);
+//        //System.out.println(p);
+//        p.setName("Parry");
+//        Supplier<Parrot> parrotSupplier = ()-> p;
+//
+//        context.registerBean("parrot", Parrot.class, parrotSupplier);
+//        System.out.println(p.getName());
 
-        context.registerBean("parrot", Parrot.class, parrotSupplier);
+        Person p = context.getBean(Person.class);
+
         System.out.println(p.getName());
-
+        System.out.println(p.getParrot());
     }
 }
