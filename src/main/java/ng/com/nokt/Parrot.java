@@ -1,5 +1,6 @@
 package ng.com.nokt;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -15,4 +16,9 @@ public class Parrot {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Autowired
+    public Parrot(SoundInterface soundInterface) {
+    }
+
 }
