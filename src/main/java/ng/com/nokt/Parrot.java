@@ -17,8 +17,15 @@ public class Parrot {
         this.name = name;
     }
 
+    private final SoundInterface soundInterface;
+
     @Autowired
     public Parrot(SoundInterface soundInterface) {
+        this.soundInterface = soundInterface;
+    }
+
+    String makeSound(){
+        return soundInterface.makesSound();
     }
 
 }
