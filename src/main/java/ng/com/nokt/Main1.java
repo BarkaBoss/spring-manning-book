@@ -8,6 +8,7 @@ public class Main1 {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
+        System.out.println("Created Eager Bean Above and Lazy Below");
         CommentService commentService = context.getBean(CommentService.class);
         UserService userService = context.getBean(UserService.class);
 
