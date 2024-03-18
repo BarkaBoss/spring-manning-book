@@ -12,6 +12,7 @@ public class Main1 {
         CommentService commentService = context.getBean(CommentService.class);
         UserService userService = context.getBean(UserService.class);
 
+        //Bean is now a Prototype
         boolean b = userService.getCommentRepository() == commentService.getCommentRepository();
         System.out.println(b);
     }
