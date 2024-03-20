@@ -1,13 +1,15 @@
 package ng.com.nokt.config;
 
-import ng.com.nokt.Parrot;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import ng.com.nokt.services.LoggingAspect;
+import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScan(basePackages = "ng.com.nokt")
+@EnableAspectJAutoProxy
+@ComponentScan(basePackages = "ng.com.nokt.services")
 public class ProjectConfig {
 
+    @Bean
+    public LoggingAspect loggingAspect(){
+        return new LoggingAspect();
+    }
 }
