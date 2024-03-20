@@ -10,9 +10,8 @@ import java.util.Arrays;
 import java.util.logging.Logger;
 
 @Aspect
-@Order(2)
-public class LoggingAspect {
-
+@Order(1)
+public class SecurityAspect {
     private Logger logger = Logger.getLogger(LoggingAspect.class.getName());
 
     @Around("@annotation(ToLog)")
@@ -20,7 +19,7 @@ public class LoggingAspect {
         String methodName = proceedingJoinPoint.getSignature().getName();
         Object[] args = proceedingJoinPoint.getArgs();
 
-        logger.info("Method "+methodName+
+        logger.info("Security Method "+methodName+
                 " with params "+ Arrays.asList(args)+" will execute");
 
         Comment comment = new Comment();
@@ -29,7 +28,7 @@ public class LoggingAspect {
         Object[] newArgs = {comment};
 
         Object returnedMethod = proceedingJoinPoint.proceed(newArgs);
-        logger.info("Method Finished Executing and Returned "+returnedMethod);
+        logger.info("Security Method Finished Executing and Returned "+returnedMethod);
 
         return "FAILED";
     }
