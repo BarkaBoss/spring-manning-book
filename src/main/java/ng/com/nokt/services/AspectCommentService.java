@@ -13,8 +13,9 @@ public class AspectCommentService {
 
     private Logger logger = Logger.getLogger(AspectCommentService.class.getName());
 
-    public void publishComment(Comment comment){
+    public String publishComment(Comment comment){
         logger.info("Publishing Comment...from " + comment.getComment() +" "+ comment.getAuthor());
+        return "SUCCESS";
     }
 
     @Repository
