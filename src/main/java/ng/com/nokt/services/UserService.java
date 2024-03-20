@@ -1,4 +1,4 @@
-package ng.com.nokt;
+package ng.com.nokt.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,14 +6,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    private final CommentRepository commentRepository;
+    private final AspectCommentService.CommentRepository commentRepository;
 
     @Autowired
-    public UserService(CommentRepository commentRepository) {
+    public UserService(AspectCommentService.CommentRepository commentRepository) {
         this.commentRepository = commentRepository;
     }
 
-    public CommentRepository getCommentRepository() {
+    public AspectCommentService.CommentRepository getCommentRepository() {
         return commentRepository;
     }
 }

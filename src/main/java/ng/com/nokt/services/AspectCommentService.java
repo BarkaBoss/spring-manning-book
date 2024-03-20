@@ -1,6 +1,9 @@
 package ng.com.nokt.services;
 
 import ng.com.nokt.beans.Comment;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.logging.Logger;
@@ -14,4 +17,8 @@ public class AspectCommentService {
         logger.info("Publishing Comment...from " + comment.getComment() +" "+ comment.getAuthor());
     }
 
+    @Repository
+    @Scope(BeanDefinition.SCOPE_PROTOTYPE)
+    public static class CommentRepository {
+    }
 }

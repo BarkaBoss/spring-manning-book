@@ -1,7 +1,8 @@
 package ng.com.nokt;
 
 import ng.com.nokt.config.ProjectConfig;
-import org.springframework.context.ApplicationContext;
+import ng.com.nokt.services.CommentService;
+import ng.com.nokt.services.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main1 {

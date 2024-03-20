@@ -1,26 +1,23 @@
-package ng.com.nokt;
+package ng.com.nokt.services;
 
-import ng.com.nokt.beans.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
-
-import java.util.logging.Logger;
 
 @Service
 @Lazy
 public class CommentService {
 
-    private final CommentRepository commentRepository;
+    private final AspectCommentService.CommentRepository commentRepository;
 
 
     @Autowired
-    public CommentService(CommentRepository commentRepository) {
+    public CommentService(AspectCommentService.CommentRepository commentRepository) {
         System.out.println("Comment Bean Created");
         this.commentRepository = commentRepository;
     }
 
-    public CommentRepository getCommentRepository() {
+    public AspectCommentService.CommentRepository getCommentRepository() {
         return commentRepository;
     }
 }
