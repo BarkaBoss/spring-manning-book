@@ -18,6 +18,13 @@ public class AspectCommentService {
         return "SUCCESS";
     }
 
+    @ToLog
+    public String delete(Comment comment){
+
+        logger.info("Deleting Comment");
+        return "Deleted";
+    }
+
     @Repository
     @Scope(BeanDefinition.SCOPE_PROTOTYPE)
     public static class CommentRepository {

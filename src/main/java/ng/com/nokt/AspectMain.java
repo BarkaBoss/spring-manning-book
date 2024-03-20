@@ -19,7 +19,7 @@ public class AspectMain {
         comment.setAuthor("James Bond");
         comment.setComment("I'm Bond ");
 
-        String value = commentService.publishComment(comment);
+        String value = commentService.delete(comment);
         logger.info(value);
     }
 }
